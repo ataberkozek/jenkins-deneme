@@ -8,7 +8,7 @@ pipeline {
         }
         stage('run'){
             steps {
-                python hello.py
+                python3 hello.py
             }
         }
     }
