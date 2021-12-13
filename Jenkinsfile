@@ -1,5 +1,5 @@
 pipeline {
-    agent { label python
+    agent label python
     stages {
         stage('build') {
             steps {
@@ -21,4 +21,3 @@ pipeline {
         }
     }
     }
-}
