@@ -14,10 +14,10 @@ pipeline {
     }
     post {
         success {
-            emailext body: ${BUILD_URL}' has result' ${currentBuild.result}, subject: 'Status of pipeline: '${currentBuild.fullDisplayName}, to: 'ataberk.ozek@ayrotek.com.tr'
+            emailext body: 'Build number: '{$BUILD_NUMBER}  ' has result ' ${BUILD_STATUS}, subject: 'Status of pipeline: '${PROJECT_NAME}, to: 'ataberk.ozek@ayrotek.com.tr'
         }
         failure {
-            emailext body: ${BUILD_URL}' has result '${currentBuild.result}, subject: 'Status of pipeline: '${currentBuild.fullDisplayName}, to: 'ataberk.ozek@ayrotek.com.tr'
+            emailext body: 'Build number: '{$BUILD_NUMBER} 'with build url: ' ${BUILD_URL}' has result' ${BUILD_STATUS}, subject: 'Status of pipeline: '${PROJECT_NAME}, to: 'ataberk.ozek@ayrotek.com.tr'
         }
     }
     }
