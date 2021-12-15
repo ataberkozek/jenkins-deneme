@@ -6,6 +6,7 @@ pipeline {
                     sh 'node ./backend/test.js'
                 }
             }
+    }
     post {
         success {
             emailext body: "Build number: ${BUILD_NUMBER} has result ${currentBuild.currentResult}.", subject: "Status of pipeline: ${JOB_NAME}", to: "ataberk.ozek@ayrotek.com.tr"
@@ -16,6 +17,5 @@ pipeline {
         unstable {
             emailext attachLog: true, body: "Build number: ${BUILD_NUMBER} with build url: ${BUILD_URL} has result ${currentBuild.currentResult}.", subject: "Status of pipeline: ${JOB_NAME}", to: "ataberk.ozek@ayrotek.com.tr"
         }
-    }
     }
 }
