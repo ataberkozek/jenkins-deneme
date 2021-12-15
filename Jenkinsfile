@@ -1,6 +1,6 @@
 pipeline {
     agent {
-        kubernetes { image 'node:16.13.1-alpine' }
+        kubernetes 
     }
     stages {
             stage('Backend Tests') {
