@@ -1,6 +1,6 @@
 pipeline {
     agent {
-        node { label 'nodejs' }
+        docker { image 'node:16.13.1-alpine' }
     }
     stages {
             stage('Backend Tests') {
