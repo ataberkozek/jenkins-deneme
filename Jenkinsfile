@@ -1,5 +1,7 @@
 pipeline {
-    agent any
+    agent {
+        node { label 'nodejs' }
+    }
     stages {
             stage('Backend Tests') {
                 steps {
